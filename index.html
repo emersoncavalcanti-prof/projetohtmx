@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HTMX</title>
+    <script src="https://unpkg.com/htmx.org@1.9.12" integrity="sha384-ujb1lZYygJmzgSwoxRggbCHcjc0rB2XoQrxeTUQyRjrOnlCoYta87iKBWq3EsdM2" crossorigin="anonymous"></script>
+  </head>
+  <body>
+      <button hx-target="#dados" hx-trigger="click" hx-get="https://dummyjson.com/products">Listar</button>
+      <div id="dados"></div>
+    </body>
+</html>
