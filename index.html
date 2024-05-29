@@ -13,7 +13,10 @@
       
       <h3>Lista  de produtos</h3>  
 
-    
+     <input class="form-control" name="q" id="busca-produtos" 
+     hx-trigger="keyup delay:400ms" hx-target="#dados-produtos" 
+     hx-get="https://dummyjson.com/products/search" type="text" 
+     placeholder="O que você procura?" >
 
       <table class="table" hx-indicator="#loading" id="busca-produtos" hx-target="#dados-produtos" hx-trigger="load" hx-get="https://dummyjson.com/products">
           
