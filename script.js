@@ -29,6 +29,31 @@ if(event.target.id === 'busca-produtos'){
     })
 
     produtosDiv.innerHTML = htmlDiv
-}
+}else if(event.target.id === 'busca-produtos-grid'){
+        console.log(event.detail.xhr);
+    
+        const response = JSON.parse(event.detail.xhr.responseText)
+        const produtosDiv = document.querySelector("#dados-produtos-grid");
+    
+        let htmlDiv = "";
+        let preco = 0;
+    
+        response.products.forEach(produto => {
+            
+            preco = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(produto.price);
+            
+            htmlDiv += `
+          
+              <div class="col-md-3 col-6 border border-danger my-1 mx-0">
+               <img src="${produto.thumbnail}" class="img-fluid">
+               <div><strong> ${produto.title}</strong></div>
+              </div>
+       
+            `
+      
+        })
+    
+        produtosDiv.innerHTML = htmlDiv
+    }
 
 });
